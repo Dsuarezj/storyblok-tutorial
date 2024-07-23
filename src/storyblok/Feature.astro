@@ -1,8 +1,11 @@
 ---
+import { storyblokEditable } from '@storyblok/astro'
+
 const { blok } = Astro.props
 ---
 
 <div
+  {...storyblokEditable(blok)}
   class='w-full p-12 bg-[#f7f6fd] rounded-[5px] text-center'
 >
     <img
