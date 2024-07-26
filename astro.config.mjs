@@ -13,7 +13,7 @@ export default defineConfig({
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
       bridge: storyblokispreview === 'yes',
-      output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
+      output: 'static',
       components: {
         page: 'storyblok/Page',
         config: 'storyblok/Config',
