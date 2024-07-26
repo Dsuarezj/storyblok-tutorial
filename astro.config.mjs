@@ -25,7 +25,7 @@ export default defineConfig({
     }),
     tailwind()
   ],
-  output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
+  output: 'server',
   vite: {
     plugins: [basicSsl()],
     server: {
