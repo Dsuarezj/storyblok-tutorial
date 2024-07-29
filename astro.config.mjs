@@ -6,14 +6,13 @@ import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 const env = loadEnv("", process.cwd(), 'STORYBLOK')
 
-let storyblokispreview = env.STORYBLOK_IS_PREVIEW;
-console.log('***** storyblokispreview', storyblokispreview)
+let output = env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static';
+console.log('**** output', output)
 export default defineConfig({
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
-      bridge: storyblokispreview === 'yes',
-      output: 'static',
+      bridge: env.STORYBLOK_IS_PREVIEW === 'yes',
       components: {
         page: 'storyblok/Page',
         config: 'storyblok/Config',
@@ -28,6 +27,7 @@ export default defineConfig({
     }),
     tailwind()
   ],
+  output,
   vite: {
     plugins: [basicSsl()],
     server: {
