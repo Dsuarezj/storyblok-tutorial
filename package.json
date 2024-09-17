@@ -15,7 +15,7 @@
     "@storyblok/astro": "^4.1.1",
     "astro": "^4.11.5",
     "tailwindcss": "^3.4.6",
-    "vite": "^5.3.4"
+    "vite": "^5.4.6"
   },
   "devDependencies": {
     "@vitejs/plugin-basic-ssl": "^1.1.0"
